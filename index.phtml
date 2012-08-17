@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap, for LVPHP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A continually improved upon project of the LVPHP user group.">
+    <meta name="author" content="LVPHP">
+
+    <!-- Le styles -->
+    <link href="bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+    <link href="bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="bootstrap/docs/assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="bootstrap/docs/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="bootstrap/docs/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="bootstrap/docs/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="bootstrap/docs/assets/ico/apple-touch-icon-57-precomposed.png">
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+        <h1>Lehigh Valley PHP!</h1>
+        <?php echo $groupData['description']?>
+        <p><a class="btn btn-primary btn-large" href="http://meetup.lehighvalleyphp.com/">Join us on Meetup &raquo;</a></p>
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="span4">
+          <h2>Monthly Meetups</h2>
+           <p>Each month we hold a PHP User Group meeting. Our location changes from time to time, but it someplace the the Lehigh Valley.</p>
+           <p>Our group currently has around <?php echo (int) $groupData['members']?> members, and our next meeting is Friday August 17th, at <a href="http://sobecoworks.com/">SoBoCoWorks</a>.</p>
+          <p><a class="btn" href="http://meetup.lehighvalleyphp.com/events/72068392/">Details &raquo;</a></p>
+        </div>
+        <div class="span4">
+          <h2>LVTech</h2>
+           <p>Lehigh Valley PHP is closely aligned with the LVTech group. If you're interested in encouraging entrepreneurship and the growth of the technology community in this area, you should check out what they're doing.</p>
+          <p><a class="btn" href="http://www.meetup.com/lehigh-valley-tech/">Visit LVTech &raquo;</a></p>
+       </div>
+        <div class="span4">
+          <h2>PHP 101</h2>
+          <p>Our group contains a range of experience levels, and to cater to both the day to day PHP developer, and those wanting to learn more about PGP and web development, we cover a '101' topic each week, along with a more advanced topic.</p>
+          <p>No matter what you're experience level, we hope to make our meetups worthwhile and informative.</p>
+          <p>This site is an example of our 101 topics, and will be modified each month. If you want to see the progress, checkout our github account.</p>
+           <p><a class="btn" href="https://github.com/lvphp">LVPHP on GitHub &raquo;</a></p>
+          
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; Lehigh Valley PHP 2012</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+
+  </body>
+</html>
