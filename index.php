@@ -1,3 +1,19 @@
+<?php 
+//got this from meetup
+$groupId = '1773780';
+//this is set in .htaccess 
+$apiKey = getenv('API_KEY');
+//the API we need to call
+$groupAPI = 'https://api.meetup.com/2/groups';
+//our request URL (adding the needed params)
+$request = $groupAPI . '?' . http_build_query(array('group_id' => $groupId, 'key' => $apiKey));
+//simple way to get the result of an API call
+$response = file_get_contents($request);
+//decode the JSON
+$data = json_decode($response, true);
+//assume it worked
+$groupData = $data['results'][0];
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -37,7 +53,7 @@
       <!-- Main hero unit for a primary marketing message or call to action -->
       <div class="hero-unit">
         <h1>Lehigh Valley PHP!</h1>
-        <p>Join the Lehigh Valley PHP Meetup to learn, share, and hang out with other PHP developers in the Valley (and surrounding areas). While the focus is PHP, we welcome developers from all backgrounds.</p>
+        <?php echo $groupData['description']?>
         <p><a class="btn btn-primary btn-large" href="http://meetup.lehighvalleyphp.com/">Join us on Meetup &raquo;</a></p>
       </div>
 
@@ -46,7 +62,7 @@
         <div class="span4">
           <h2>Monthly Meetups</h2>
            <p>Each month we hold a PHP User Group meeting. Our location changes from time to time, but it someplace the the Lehigh Valley.</p>
-           <p>Our group currently has around 50 members, and our next meeting is Friday August 17th, at <a href="http://sobecoworks.com/">SoBoCoWorks</a>.</p>
+           <p>Our group currently has around <?php echo (int) $groupData['members']?> members, and our next meeting is Friday August 17th, at <a href="http://sobecoworks.com/">SoBoCoWorks</a>.</p>
           <p><a class="btn" href="http://meetup.lehighvalleyphp.com/events/72068392/">Details &raquo;</a></p>
         </div>
         <div class="span4">
