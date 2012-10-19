@@ -36,7 +36,7 @@
       <!-- Main hero unit for a primary marketing message or call to action -->
       <div class="hero-unit">
         <h1>Lehigh Valley PHP!</h1>
-        <?php echo $groupData['description']?>
+        {{{group.description}}}
         <p><a class="btn btn-primary btn-large" href="http://meetup.lehighvalleyphp.com/">Join us on Meetup &raquo;</a></p>
       </div>
 
@@ -45,7 +45,7 @@
         <div class="span4">
           <h2>Monthly Meetups</h2>
            <p>Each month we hold a PHP User Group meeting. Our location changes from time to time, but it someplace the the Lehigh Valley.</p>
-           <p>Our group currently has around <?php echo (int) $groupData['members']?> members, and our next meeting is Friday August 17th, at <a href="http://sobecoworks.com/">SoBoCoWorks</a>.</p>
+           <p>Our group currently has around {{group.members}} members, and our next meeting is Friday August 17th, at <a href="http://sobecoworks.com/">SoBoCoWorks</a>.</p>
           <p><a class="btn" href="http://meetup.lehighvalleyphp.com/events/72068392/">Details &raquo;</a></p>
         </div>
         <div class="span4">

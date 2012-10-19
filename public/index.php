@@ -1,4 +1,6 @@
 <?php
+require_once '../vendor/autoload.php';
+
 require_once 'meetup.php';
 /**
  * Config Data - Could be in a config file.
@@ -10,9 +12,8 @@ $key = getenv('API_KEY'); //this is set in .htaccess
 $meetup = new Meetup($key);
 $groupData = $meetup->getGroup($group);
 
-//simple render of template
-ob_start();
-include 'index.phtml';
-$output = ob_get_clean();
+//render with mustache
+$mustache = new Mustache_Engine;
 
-echo $output;
+$template = file_get_contents('index.phtml');
+echo $mustache->render($template, array('group' => $groupData));
