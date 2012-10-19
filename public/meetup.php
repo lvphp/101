@@ -27,7 +27,7 @@ class Meetup
             throw new Exception('bad response from API');
         }
         
-        //return the date
+        //return the data
         return $result['results'][0];
     }
     
