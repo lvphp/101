@@ -1,5 +1,8 @@
 {
     "require": {
         "mustache/mustache": "2.0.2"
-    }
+    },
+    "autoload": {
+        "psr-0": {"Meetup": "src/"}
+    }    
 }

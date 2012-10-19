@@ -1,7 +1,7 @@
 <?php
 require_once '../vendor/autoload.php';
 
-require_once 'meetup.php';
+//require_once '../src/meetup.php';
 /**
  * Config Data - Could be in a config file.
  */
