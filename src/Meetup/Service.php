@@ -8,6 +8,7 @@ class Service
     
     protected $key;
     protected $defaults = array();
+    protected $http;
     
     public function __construct($key)
     {
@@ -26,7 +27,7 @@ class Service
         $result = $this->makeRequest(self::API_ENDPOINT . self::API_GROUPS, array('group_id' => $group));
         //check for the expected result
         if(!isset($result['results'][0])){
-            throw new Exception('bad response from API');
+            throw new \Exception('bad response from API');
         }
         
         //return the data
@@ -34,7 +35,7 @@ class Service
     }
     
     /**
-     * Simple HTTP Request that parses a JSON response.
+     * Make HTTP Request and Check Data
      * 
      * @param string $url
      * @param array $params
@@ -43,12 +44,21 @@ class Service
     {
         //set defaults
         $params = array_merge($this->defaults, $params);
-        //build the query string
-        $request = $url . '?' . http_build_query($params);
-        //request the data
-        $response = file_get_contents($request);
+        $body = $this->getHttpClient()->get($url, $params);
         //parse and return an array
-        return json_decode($response, true);
+        return json_decode($body, true);
     }
     
+    public function setHttpClient(HttpInterface $http)
+    {
+        $this->http = $http;
+    }
+    
+    public function getHttpClient()
+    {
+        if(empty($this->http)){
+            $this->setHttpClient(new Http());
+        }
+        return $this->http;
+    }
 }
