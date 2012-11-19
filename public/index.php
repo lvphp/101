@@ -10,6 +10,9 @@ $key = getenv('API_KEY'); //this is set in .htaccess
 
 //get some data from meetup
 $meetup = new Meetup\Service($key);
+$http = new LVPhp\Http();
+$meetup->setHttpClient($http);
+
 $groupData = $meetup->getGroup($group);
 
 //render with mustache

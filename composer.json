@@ -1,8 +1,9 @@
 {
     "require": {
-        "mustache/mustache": "2.0.2"
+        "mustache/mustache": "2.0.2",
+        "kriswallsmith/buzz" : "0.7"
     },
     "autoload": {
-        "psr-0": {"Meetup": "src/"}
+        "psr-0": {"Meetup": "src/","LVPhp": "src/"}
     }    
 }
