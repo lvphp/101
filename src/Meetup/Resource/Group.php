@@ -2,6 +2,8 @@
 namespace Meetup\Resource;
 class Group extends \Meetup\ResourceAbstract 
 {
+    use JsonReflector;
+    
     public function getMembers()
     {
         return $this->data['members'];
@@ -10,13 +12,5 @@ class Group extends \Meetup\ResourceAbstract
     public function getDescription()
     {
         return strip_tags($this->data['description']);
-    }
-    
-    public function jsonSerialize()
-    {
-        return array(
-            'members' => $this->getMembers(),
-            'description' => $this->getDescription(),
-        );
     }
 }
