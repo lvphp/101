@@ -19,4 +19,4 @@ $groupData = $meetup->getGroup($group);
 $mustache = new Mustache_Engine;
 
 $template = file_get_contents('index.phtml');
-echo $mustache->render($template, array('group' => $groupData));
+echo $mustache->render($template, array('group' => $groupData->jsonSerialize()));

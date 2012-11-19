@@ -31,7 +31,7 @@ class Service
         }
         
         //return the data
-        return $result['results'][0];
+        return new Resource\Group($result['results'][0]);
     }
     
     /**
