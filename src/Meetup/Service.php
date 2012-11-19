@@ -1,5 +1,7 @@
 <?php
-class Meetup
+namespace Meetup;
+
+class Service
 {
     const API_ENDPOINT = 'https://api.meetup.com/2/';
     const API_GROUPS = 'groups';

@@ -9,7 +9,7 @@ $group = '1773780'; //got this from meetup
 $key = getenv('API_KEY'); //this is set in .htaccess 
 
 //get some data from meetup
-$meetup = new Meetup($key);
+$meetup = new Meetup\Service($key);
 $groupData = $meetup->getGroup($group);
 
 //render with mustache
