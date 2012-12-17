@@ -1,7 +1,8 @@
 {
     "require": {
         "mustache/mustache": "2.0.2",
-        "kriswallsmith/buzz" : "0.7"
+        "kriswallsmith/buzz" : "0.7",
+        "phpunit/phpunit" : "*"
     },
     "autoload": {
         "psr-0": {"Meetup": "src/","LVPhp": "src/"}
