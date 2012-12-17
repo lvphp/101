@@ -42,6 +42,9 @@ class HttpTest extends PHPUnit_Framework_TestCase
     $this->assertEquals('content', $response);
   }
 
+  /**
+   * Provide different Bad URLs
+   */
   public function badUrlProvider()
   {
     return array(
@@ -59,6 +62,9 @@ class HttpTest extends PHPUnit_Framework_TestCase
     $this->http->get($url); 
   }
 
+  /**
+   * Provide different types of valid queries
+   */
   public function queriesProvider()
   {
       return array(
@@ -70,7 +76,7 @@ class HttpTest extends PHPUnit_Framework_TestCase
   /**
    * @dataProvider queriesProvider
    */
-  public function testSendingQueriesWorks($queries)
+  public function testCanUseArraysOrStringsAsQueries($queries)
   {
     $response = $this->http->get('http://www.example.com', $queries);
     $this->assertEquals('content', $response);
